@@ -1,12 +1,22 @@
+import { useState , useEffect } from 'react';
 import './App.css';
 
 const App = () =>  {
   
+  const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    alert("athavan changed the counter to " + counter);
+  },[counter]
+
+  );
+
  
   return (
     <div className="App">
-     
-    </div>
+     <button onClick={() => setCounter((prevCount) => prevCount -1)}>-</button>
+     <h1>{counter}</h1>
+     <button onClick={() => setCounter((prevCount) => prevCount +1)}>+</button>    </div>
   );
 }
 
